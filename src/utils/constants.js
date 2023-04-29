@@ -2,9 +2,10 @@ const CONSTANTS = {
   API_HOST: "https://pokeapi.co/api/v2/",
 };
 
-const TEXT_COLORS = {
+const COLORS = {
   WHITE: "#fff",
   BLACK: "#000",
+  GRAY: "#AEAEAE",
 };
 
 const POKEMON_TYPE_COLORS = {
@@ -28,4 +29,4 @@ const POKEMON_TYPE_COLORS = {
   fairy: "#EE99AC",
 };
 
-export { TEXT_COLORS, CONSTANTS, POKEMON_TYPE_COLORS };
+export { COLORS, CONSTANTS, POKEMON_TYPE_COLORS };

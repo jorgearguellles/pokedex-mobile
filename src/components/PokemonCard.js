@@ -7,8 +7,9 @@ import {
   TouchableWithoutFeedback,
 } from "react-native";
 import { capitalize } from "lodash";
-import { TEXT_COLORS } from "../utils/constants";
+import { COLORS } from "../utils/constants";
 import getColorByPokemonType from "../utils/getColorByPokemonType";
+
 export default function PokemonCard(props) {
   const {
     pokemon: { id, name, order, type, image },
@@ -51,16 +52,21 @@ const styles = StyleSheet.create({
     flex: 1,
     borderRadius: 15,
     padding: 10,
+    // On iOS we need next 4 properties to generate box shadow effect
+    shadowColor: `${COLORS.BLACK}`, // iOS only property
+    shadowOffset: { width: 2, height: 2 }, // iOS only property
+    shadowRadius: 6, // iOS only property
+    shadowOpacity: 0.4, // iOS only property
   },
   number: {
     position: "absolute",
     right: 10,
     top: 10,
-    color: `${TEXT_COLORS.WHITE}`,
+    color: `${COLORS.WHITE}`,
     fontSize: 11,
   },
   name: {
-    color: `${TEXT_COLORS.WHITE}`,
+    color: `${COLORS.WHITE}`,
     fontWeight: "bold",
     fontSize: 15,
     paddingTop: 10,
@@ -70,7 +76,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     right: 0,
     // On iOS we need next 4 properties to generate box shadow effect
-    shadowColor: `${TEXT_COLORS.BLACK}`, // iOS only property
+    shadowColor: `${COLORS.BLACK}`, // iOS only property
     shadowOffset: { width: 4, height: 4 }, // iOS only property
     shadowRadius: 10, // iOS only property
     shadowOpacity: 0.7, // iOS only property

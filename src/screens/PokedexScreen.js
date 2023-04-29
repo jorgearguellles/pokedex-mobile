@@ -5,16 +5,18 @@ import { getPokemonsAPI, getPokemonDetailsByUrlAPI } from "../api/getPokemons";
 
 export default function PokedexScreen() {
   const [pokemons, setPokemons] = useState([]);
+  const [nextPokemons, setNextPokemons] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    (async () => {
-      await loadPokemons();
-    })();
+    loadPokemons();
   }, []);
 
   const loadPokemons = async () => {
     try {
-      const response = await getPokemonsAPI();
+      setLoading(true);
+      const response = await getPokemonsAPI(nextPokemons);
+      setNextPokemons(response.next);
 
       const pokemonsArray = [];
       for await (const pokemon of response.results) {
@@ -24,20 +26,27 @@ export default function PokedexScreen() {
           id: pokemonDetails.id,
           name: pokemonDetails.name,
           type: pokemonDetails.types[0].type.name,
-          order: pokemonDetails.order,
+          order: pokemonDetails.id,
           image: pokemonDetails.sprites.other["official-artwork"].front_default,
         });
       }
 
       setPokemons([...pokemons, ...pokemonsArray]);
     } catch (error) {
-      console.error("Error trying load pokemons ==> ", error);
+      console.error("[PokedexScreen.js][loadPokemons()][Error] ==> ", error);
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <SafeAreaView>
-      <PokemonList pokemons={pokemons} />
+      <PokemonList
+        pokemons={pokemons}
+        loadPokemons={loadPokemons}
+        isNextPokemons={nextPokemons}
+        isLoading={loading}
+      />
     </SafeAreaView>
   );
 }
