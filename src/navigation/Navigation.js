@@ -2,7 +2,7 @@ import React from "react";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import { Image, View, StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { colors } from "../utils/constants";
+import { TEXT_COLORS } from "../utils/constants";
 import FavoritesNavigation from "./FavoritesNavigation";
 import PokedexNavigation from "./PokedexNavigation";
 import AccountNavigation from "./AccountNavigation";
@@ -58,7 +58,7 @@ function renderPokeball() {
 const pokeballStyles = StyleSheet.create({
   pokeballContainer: {
     // On iOS we need next 4 properties to generate box shadow effect
-    shadowColor: `${colors.BLACK}`, // iOS only property
+    shadowColor: `${TEXT_COLORS.BLACK}`, // iOS only property
     shadowOffset: { width: 4, height: 4 }, // iOS only property
     shadowRadius: 10, // iOS only property
     shadowOpacity: 0.7, // iOS only property

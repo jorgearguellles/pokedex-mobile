@@ -6,12 +6,16 @@ import {
   Image,
   TouchableWithoutFeedback,
 } from "react-native";
-import { colors } from "../utils/constants";
-
+import { capitalize } from "lodash";
+import { TEXT_COLORS } from "../utils/constants";
+import getColorByPokemonType from "../utils/getColorByPokemonType";
 export default function PokemonCard(props) {
   const {
     pokemon: { id, name, order, type, image },
   } = props;
+
+  const pokemonColor = getColorByPokemonType(type);
+  const bgStyles = { backgroundColor: pokemonColor, ...styles.backGround };
 
   const gotToPokemon = () => {
     console.log(`Go to Pokemon ${name}`);
@@ -21,9 +25,9 @@ export default function PokemonCard(props) {
     <TouchableWithoutFeedback onPress={gotToPokemon}>
       <View style={styles.card}>
         <View style={styles.spacing}>
-          <View style={styles.backGround}>
+          <View style={bgStyles}>
             <Text style={styles.number}>#{`${order}`.padStart(3, 0)}</Text>
-            <Text style={styles.name}>{name}</Text>
+            <Text style={styles.name}>{capitalize(name)}</Text>
             <View style={styles.imageContainer}>
               <Image source={{ uri: image }} style={styles.image} />
             </View>
@@ -44,24 +48,29 @@ const styles = StyleSheet.create({
     padding: 5,
   },
   backGround: {
-    backgroundColor: "gray",
+    flex: 1,
+    borderRadius: 15,
+    padding: 10,
   },
   number: {
     position: "absolute",
     right: 10,
     top: 10,
-    color: `${colors.WHITE}`,
+    color: `${TEXT_COLORS.WHITE}`,
     fontSize: 11,
   },
   name: {
-    color: `${colors.WHITE}`,
+    color: `${TEXT_COLORS.WHITE}`,
     fontWeight: "bold",
     fontSize: 15,
     paddingTop: 10,
   },
   imageContainer: {
+    position: "absolute",
+    bottom: 0,
+    right: 0,
     // On iOS we need next 4 properties to generate box shadow effect
-    shadowColor: `${colors.BLACK}`, // iOS only property
+    shadowColor: `${TEXT_COLORS.BLACK}`, // iOS only property
     shadowOffset: { width: 4, height: 4 }, // iOS only property
     shadowRadius: 10, // iOS only property
     shadowOpacity: 0.7, // iOS only property
