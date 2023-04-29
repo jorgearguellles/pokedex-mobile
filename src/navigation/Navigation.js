@@ -1,20 +1,20 @@
 import React from "react";
+import Icon from "react-native-vector-icons/FontAwesome5";
 import { Image, View, StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Icon from "react-native-vector-icons/FontAwesome5";
 
-import AccountScreen from "../screens/AccountScreen";
-import PokedexScreen from "../screens/PokedexScreen";
-import FavoritesScreen from "../screens/FavoritesScreen";
+import FavoritesNavigation from "./FavoritesNavigation";
+import PokedexNavigation from "./PokedexNavigation";
+import AccountNavigation from "./AccountNavigation";
 
-const BottomNavbar = createBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 
 export default function Navigation() {
   return (
-    <BottomNavbar.Navigator>
-      <BottomNavbar.Screen
+    <Tab.Navigator>
+      <Tab.Screen
         name="Favorites"
-        component={FavoritesScreen}
+        component={FavoritesNavigation}
         options={{
           tabBarLabel: "Account",
           tabBarIcon: ({ color, size }) => (
@@ -22,17 +22,17 @@ export default function Navigation() {
           ),
         }}
       />
-      <BottomNavbar.Screen
+      <Tab.Screen
         name="Pokedex"
-        component={PokedexScreen}
+        component={PokedexNavigation}
         options={{
           tabBarLabel: "",
           tabBarIcon: () => renderPokeball(),
         }}
       />
-      <BottomNavbar.Screen
+      <Tab.Screen
         name="Account"
-        component={AccountScreen}
+        component={AccountNavigation}
         options={{
           tabBarLabel: "Account",
           tabBarIcon: ({ color, size }) => (
@@ -40,22 +40,22 @@ export default function Navigation() {
           ),
         }}
       />
-    </BottomNavbar.Navigator>
+    </Tab.Navigator>
   );
 }
 
 function renderPokeball() {
   return (
-    <View style={styles.pokeballContainer}>
+    <View style={pokeballStyles.pokeballContainer}>
       <Image
-        style={styles.pokeball}
+        style={pokeballStyles.pokeballImage}
         source={require("../assets/pokeball.png")}
       />
     </View>
   );
 }
 
-const styles = StyleSheet.create({
+const pokeballStyles = StyleSheet.create({
   pokeballContainer: {
     // On iOS we need next 4 properties to generate box shadow effect
     shadowColor: "black", // iOS only property
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     shadowRadius: 10, // iOS only property
     shadowOpacity: 0.7, // iOS only property
   },
-  pokeball: {
+  pokeballImage: {
     width: 75,
     height: 75,
     top: -15,
