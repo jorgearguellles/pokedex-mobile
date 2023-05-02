@@ -1,7 +1,12 @@
-import { ActivityIndicator, FlatList, StyleSheet } from "react-native";
+import {
+  ActivityIndicator,
+  FlatList,
+  StyleSheet,
+  Platform,
+} from "react-native";
 import React from "react";
 import PokemonCard from "./PokemonCard";
-import { COLORS } from "../utils/constants";
+import { COLORS, CONSTANTS } from "../utils/constants";
 
 export default function PokemonList(props) {
   const { pokemons, loadPokemons, isNextPokemons, isLoading } = props;
@@ -36,10 +41,10 @@ export default function PokemonList(props) {
 
 const styles = StyleSheet.create({
   flatListContentContainer: {
-    paddingHorizontal: 5,
+    paddingHorizontal: Platform.OS === CONSTANTS.PLATFORM_ANDROID ? 30 : 0,
   },
   spinner: {
     marginTop: 20,
-    marginBottom: 60,
+    marginBottom: Platform.OS === CONSTANTS.PLATFORM_ANDROID ? 90 : 60,
   },
 });

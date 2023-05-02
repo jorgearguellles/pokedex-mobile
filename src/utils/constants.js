@@ -1,5 +1,7 @@
 const CONSTANTS = {
   API_HOST: "https://pokeapi.co/api/v2/",
+  PLATFORM_IOS: "ios",
+  PLATFORM_ANDROID: "android",
 };
 
 const COLORS = {

@@ -9,17 +9,19 @@ import {
 import { capitalize } from "lodash";
 import { COLORS } from "../utils/constants";
 import getColorByPokemonType from "../utils/getColorByPokemonType";
+import { useNavigation } from "@react-navigation/native";
 
 export default function PokemonCard(props) {
   const {
     pokemon: { id, name, order, type, image },
   } = props;
+  const navigation = useNavigation();
 
   const pokemonColor = getColorByPokemonType(type);
   const bgStyles = { backgroundColor: pokemonColor, ...styles.backGround };
 
   const gotToPokemon = () => {
-    console.log(`Go to Pokemon ${name}`);
+    navigation.navigate("PokemonInfo", { id: id });
   };
 
   return (
@@ -74,7 +76,7 @@ const styles = StyleSheet.create({
   imageContainer: {
     position: "absolute",
     bottom: 0,
-    right: 0,
+    right: 10,
     // On iOS we need next 4 properties to generate box shadow effect
     shadowColor: `${COLORS.BLACK}`, // iOS only property
     shadowOffset: { width: 4, height: 4 }, // iOS only property

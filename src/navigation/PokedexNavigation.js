@@ -17,7 +17,7 @@ export default function PokedexNavigation() {
         }}
       />
       <Stack.Screen
-        name="Pokemon"
+        name="PokemonInfo"
         component={PokemonScreen}
         options={{
           title: "Pokemon",
