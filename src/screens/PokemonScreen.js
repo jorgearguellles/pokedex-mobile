@@ -2,6 +2,7 @@ import { ScrollView, Text } from "react-native";
 import React, { useState, useEffect } from "react";
 import { getPokemonDetailsByIdAPI } from "../api/getPokemons";
 import Header from "../components/pokemonDetails/Header";
+import Type from "../components/pokemonDetails/Type";
 
 export default function PokemonScreen(props) {
   const {
@@ -32,6 +33,7 @@ export default function PokemonScreen(props) {
         image={pokemon.sprites.other["official-artwork"].front_default}
         type={pokemon.types[0].type.name}
       />
+      <Type types={pokemon.types} />
     </ScrollView>
   );
 }
