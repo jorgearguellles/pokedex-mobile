@@ -1,5 +1,6 @@
 import { ScrollView, Text } from "react-native";
 import React, { useState, useEffect } from "react";
+import Icon from "react-native-vector-icons/FontAwesome5";
 import { getPokemonDetailsByIdAPI } from "../api/getPokemons";
 import Header from "../components/pokemonDetails/Header";
 import Type from "../components/pokemonDetails/Type";
@@ -12,6 +13,29 @@ export default function PokemonScreen(props) {
   } = props;
 
   const [pokemon, setPokemon] = useState(null);
+
+  useEffect(() => {
+    navigation.setOptions({
+      headerRight: () => (
+        <Icon
+          name="heart"
+          color={"white"}
+          size={20}
+          style={{ marginRight: 20 }}
+          onPress={() => console.log("Add to favorites")}
+        />
+      ),
+      headerLeft: () => (
+        <Icon
+          name="arrow-left"
+          color={"white"}
+          size={20}
+          style={{ marginLeft: 20 }}
+          onPress={() => navigation.goBack()}
+        />
+      ),
+    });
+  }, [navigation, params]);
 
   useEffect(() => {
     (async () => {
