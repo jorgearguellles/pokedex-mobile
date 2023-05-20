@@ -8,6 +8,8 @@ const COLORS = {
   WHITE: "#fff",
   BLACK: "#000",
   GRAY: "#AEAEAE",
+  GRAY2: "#6b6b6b",
+  GRAY3: "#ededed",
 };
 
 const POKEMON_TYPE_COLORS = {

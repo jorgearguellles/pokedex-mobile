@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { getPokemonDetailsByIdAPI } from "../api/getPokemons";
 import Header from "../components/pokemonDetails/Header";
 import Type from "../components/pokemonDetails/Type";
+import Stats from "../components/pokemonDetails/Stats";
 
 export default function PokemonScreen(props) {
   const {
@@ -34,6 +35,7 @@ export default function PokemonScreen(props) {
         type={pokemon.types[0].type.name}
       />
       <Type types={pokemon.types} />
+      <Stats stats={pokemon.stats} type={pokemon.types[0].type.name} />
     </ScrollView>
   );
 }
