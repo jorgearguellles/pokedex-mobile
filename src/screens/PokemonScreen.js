@@ -5,6 +5,8 @@ import { getPokemonDetailsByIdAPI } from "../api/getPokemons";
 import Header from "../components/pokemonDetails/Header";
 import Type from "../components/pokemonDetails/Type";
 import Stats from "../components/pokemonDetails/Stats";
+import Favorite from "../components/pokemonDetails/Favorite";
+import useAuth from "../hooks/useAuth";
 
 export default function PokemonScreen(props) {
   const {
@@ -13,18 +15,11 @@ export default function PokemonScreen(props) {
   } = props;
 
   const [pokemon, setPokemon] = useState(null);
+  const { auth } = useAuth();
 
   useEffect(() => {
     navigation.setOptions({
-      headerRight: () => (
-        <Icon
-          name="heart"
-          color={"white"}
-          size={20}
-          style={{ marginRight: 20 }}
-          onPress={() => console.log("Add to favorites")}
-        />
-      ),
+      headerRight: () => auth && <Favorite id={pokemon?.id} />,
       headerLeft: () => (
         <Icon
           name="arrow-left"
@@ -35,7 +30,7 @@ export default function PokemonScreen(props) {
         />
       ),
     });
-  }, [navigation, params]);
+  }, [navigation, params, pokemon]);
 
   useEffect(() => {
     (async () => {
