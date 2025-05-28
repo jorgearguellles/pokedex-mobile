@@ -13,30 +13,61 @@ Una aplicación móvil moderna de Pokédex desarrollada con React Native y Expo,
 
 ## 📸 Capturas de Pantalla
 
-### Pantalla de Inicio
-
-![Pantalla de Inicio](https://raw.githubusercontent.com/[tu-usuario]/pokedex-mobile/main/assets/screenshots/home.png)
-_Lista principal de Pokémon con diseño moderno_
-
-### Detalles del Pokémon
-
-![Detalles del Pokémon](https://raw.githubusercontent.com/[tu-usuario]/pokedex-mobile/main/assets/screenshots/pokemon-details.png)
-_Vista detallada con estadísticas y características_
-
-### Sistema de Favoritos
-
-![Favoritos](https://raw.githubusercontent.com/[tu-usuario]/pokedex-mobile/main/assets/screenshots/favorites.png)
-_Lista de Pokémon favoritos guardados_
-
-### Perfil de Usuario
-
-![Perfil](https://raw.githubusercontent.com/[tu-usuario]/pokedex-mobile/main/assets/screenshots/profile.png)
-_Perfil de usuario con información personal_
-
-### Login
-
-![Login](https://raw.githubusercontent.com/[tu-usuario]/pokedex-mobile/main/assets/screenshots/login.png)
-_Pantalla de inicio de sesión con validación_
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="https://github.com/jorgearguellles/pokedex-mobile/blob/main/assets/1.png" width="200"/>
+        <br />
+        <sub><b>Lista de Pokémon</b></sub>
+      </td>
+      <td align="center">
+        <img src="https://github.com/jorgearguellles/pokedex-mobile/blob/main/assets/2.png" width="200"/>
+        <br />
+        <sub><b>Detalles del Pokémon</b></sub>
+      </td>
+      <td align="center">
+        <img src="https://github.com/jorgearguellles/pokedex-mobile/blob/main/assets/3.png" width="200"/>
+        <br />
+        <sub><b>Estadísticas</b></sub>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <img src="https://github.com/jorgearguellles/pokedex-mobile/blob/main/assets/4.png" width="200"/>
+        <br />
+        <sub><b>Favoritos</b></sub>
+      </td>
+      <td align="center">
+        <img src="https://github.com/jorgearguellles/pokedex-mobile/blob/main/assets/5.png" width="200"/>
+        <br />
+        <sub><b>Perfil de Usuario</b></sub>
+      </td>
+      <td align="center">
+        <img src="https://github.com/jorgearguellles/pokedex-mobile/blob/main/assets/6.png" width="200"/>
+        <br />
+        <sub><b>Login</b></sub>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <img src="https://github.com/jorgearguellles/pokedex-mobile/blob/main/assets/7.png" width="200"/>
+        <br />
+        <sub><b>Navegación</b></sub>
+      </td>
+      <td align="center">
+        <img src="https://github.com/jorgearguellles/pokedex-mobile/blob/main/assets/8.png" width="200"/>
+        <br />
+        <sub><b>Búsqueda</b></sub>
+      </td>
+      <td align="center">
+        <img src="https://github.com/jorgearguellles/pokedex-mobile/blob/main/assets/9.png" width="200"/>
+        <br />
+        <sub><b>Filtros</b></sub>
+      </td>
+    </tr>
+  </table>
+</div>
 
 ## 🛠 Tecnologías Utilizadas
 
@@ -116,16 +147,6 @@ src/
 - Animaciones suaves
 - Feedback visual para acciones
 - Temas basados en tipos de Pokémon
-
-![example](https://github.com/jorgearguellles/pokedex-mobile/blob/main/assets/1.png)
-![example](https://github.com/jorgearguellles/pokedex-mobile/blob/main/assets/2.png)
-![example](https://github.com/jorgearguellles/pokedex-mobile/blob/main/assets/3.png)
-![example](https://github.com/jorgearguellles/pokedex-mobile/blob/main/assets/4.png)
-![example](https://github.com/jorgearguellles/pokedex-mobile/blob/main/assets/5.png)
-![example](https://github.com/jorgearguellles/pokedex-mobile/blob/main/assets/6.png)
-![example](https://github.com/jorgearguellles/pokedex-mobile/blob/main/assets/7.png)
-![example](https://github.com/jorgearguellles/pokedex-mobile/blob/main/assets/8.png)
-![example](https://github.com/jorgearguellles/pokedex-mobile/blob/main/assets/9.png)
 
 ## 🚀 Instalación y Ejecución
 
