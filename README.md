@@ -117,6 +117,16 @@ src/
 - Feedback visual para acciones
 - Temas basados en tipos de Pokémon
 
+![example](https://github.com/jorgearguellles/pokedex-mobile/blob/main/assets/1.png)
+![example](https://github.com/jorgearguellles/pokedex-mobile/blob/main/assets/2.png)
+![example](https://github.com/jorgearguellles/pokedex-mobile/blob/main/assets/3.png)
+![example](https://github.com/jorgearguellles/pokedex-mobile/blob/main/assets/4.png)
+![example](https://github.com/jorgearguellles/pokedex-mobile/blob/main/assets/5.png)
+![example](https://github.com/jorgearguellles/pokedex-mobile/blob/main/assets/6.png)
+![example](https://github.com/jorgearguellles/pokedex-mobile/blob/main/assets/7.png)
+![example](https://github.com/jorgearguellles/pokedex-mobile/blob/main/assets/8.png)
+![example](https://github.com/jorgearguellles/pokedex-mobile/blob/main/assets/9.png)
+
 ## 🚀 Instalación y Ejecución
 
 1. Clona el repositorio:
